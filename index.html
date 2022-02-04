@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/3ca5759a08.js" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- bootstrap -->
@@ -12,12 +14,123 @@
     
     <title>weather</title>
 </head>
-<h1>
-    hello world
-</h1>
-<a href="" class="btn btn-primary">click me</a>
 <body>
-    
+    <div id="root">
+        <div class="container">
+            <div class="weather">
+                <form>
+                    <div class="row gx-1">
+                        <div class="col-9">
+                            <input type="search" placeholder="Type here" class="search-input">
+                        </div>
+                        <div class="col-3" >
+                            <input type="submit" class="btn btn-primary w-100" value="Search">
+                        </div>
+                    </div>
+                </form>
+                <div class="weatherinfo">
+                    <div class="row">
+                        <div class="col-6">
+                            <h1>
+                                New York
+                            </h1>
+                            <ul>
+                                <li>
+                                    <span>
+                                        "Thursday"
+                                        "21"
+                                        ":"
+                                        "56"
+                                    </span>
+                                    ","
+                                    "cold"
+                                </li>
+                                <li>
+                                    "Humidity:"
+                                    <strong>
+                                        "69"
+                                        "%"
+                                    </strong>
+                                    ",Wind:"
+                                    <strong>
+                                        "1.54"
+                                        "km/h"
+                                    </strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <div class="temperature-container d-flex justify-content-end">
+                                <i class="fas fa-snowman fa-7x"></i>
+                                <div>
+                                    <span class="temperature">7</span>
+                                    <span class="unit">°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weatherforecast row">
+                    <div class="col">
+                        <div class="weatherforecastpreview">
+                            <div class="forecast-date">Thu</div>
+                            ifont
+                            <div class="forecast-temperature">
+                                <span class="forecast-temperature-max">7℃</span>
+                                <span class="forecast-temperature-min">2℃</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="weatherforecastpreview">
+                            <div class="forecast-date">Thu</div>
+                            ifont
+                            <div class="forecast-temperature">
+                                <span class="forecast-temperature-max">7℃</span>
+                                <span class="forecast-temperature-min">2℃</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="weatherforecastpreview">
+                            <div class="forecast-date">Thu</div>
+                            ifont
+                            <div class="forecast-temperature">
+                                <span class="forecast-temperature-max">7℃</span>
+                                <span class="forecast-temperature-min">2℃</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="weatherforecastpreview">
+                            <div class="forecast-date">Thu</div>
+                            ifont
+                            <div class="forecast-temperature">
+                                <span class="forecast-temperature-max">7℃</span>
+                                <span class="forecast-temperature-min">2℃</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="weatherforecastpreview">
+                            <div class="forecast-date">Thu</div>
+                            ifont
+                            <div class="forecast-temperature">
+                                <span class="forecast-temperature-max">7℃</span>
+                                <span class="forecast-temperature-min">2℃</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+    Erna Fan 
+    <a href="" target="_blank">Open-sourced on GitHub</a>
+    and 
+    <a href="" target="_blank">hosted on Netlify</a>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>
