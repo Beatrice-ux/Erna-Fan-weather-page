@@ -47,6 +47,11 @@ ul {
   text-align: left;
 }
 
+#city,
+#description {
+  text-transform: capitalize;
+}
+
 .weatherinfo {
   margin: 30px 0;
 }
