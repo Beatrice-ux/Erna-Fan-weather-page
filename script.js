@@ -12,32 +12,78 @@ function formDate(timestamp){
 
 
 }
+ function displayForecast(response){
+     console.log(response.data.daily);
+     let forcastElement=document.querySelector("#forecast");
+     forecastHTML=`<div class="row">`;
+     let days=["Fri","Sat","Sun","Mon","Tue","Wed"];
+     days.forEach(function(day){
+                  forecastHTML=forecastHTML+
+                             `<div class="col-2">
+                             <div class="weatherforecastpreview">
+                             <div class="forecast-date">${day}</div>
+                            <img src="http://openweathermap.org/img/wn/50d@2x.png" 
+                             alt="">
+                             <div class="forecast-temperature">
+                                 <span class="forecast-temperature-max">7℃</span>
+                                 <span class="forecast-temperature-min">2℃</span>
+                             </div>
+                         </div>
+                         </div>`;
+                         
+                        });
+                   forecastHTML=forecastHTML+`</div>`;
+     forcastElement.innerHTML=forecastHTML;
+
+ }
+
+function getForecast(coordinates){
+    let apiKey="a3b981fcdb00e192a7a49927e31c8d54";
+    let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+
+}
 
 
 
 function displayTemp(response){
-    console.log(response)
     let temperatureElement=document.querySelector("#temperature");
     let cityElement=document.querySelector("#city");
     let descriptionElement=document.querySelector("#description");
     let humidElement=document.querySelector("#humidIndex");
     let windElement=document.querySelector("#windSpeed");
     let weekdayElement=document.querySelector("#weekday");
+    let iconElement=document.querySelector("#icon");
     temperatureElement.innerHTML=Math.round(response.data.main.temp);
     cityElement.innerHTML=response.data.name;
     descriptionElement.innerHTML=response.data.weather[0].description;
     humidElement.innerHTML=response.data.main.humidity;
     windElement.innerHTML=Math.round(response.data.wind.speed);
     weekdayElement.innerHTML=formDate(response.data.dt*1000);
+    iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+    
+
+    getForecast(response.data.coord)
 }
 
 
+function search(city){
+    let apiKey="a3b981fcdb00e192a7a49927e31c8d54";
+    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-let apiKey="a3b981fcdb00e192a7a49927e31c8d54";
-let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=Hong Kong&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayTemp);
 
-axios.get(apiUrl).then(displayTemp);
-
+}
 
 
+function handlesubmit(event){
+    event.preventDefault();
+    let cityInputElement=document.querySelector(".search-input");
+    search(cityInputElement.value);
+}
 
+search("London")
+
+
+let formElement=document.querySelector("#search-form");
+formElement.addEventListener("submit",handlesubmit);

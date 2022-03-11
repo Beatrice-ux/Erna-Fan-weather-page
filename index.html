@@ -34,13 +34,14 @@
     <div id="root">
       <div class="container">
         <div class="weather">
-          <form>
+          <form id="search-form">
             <div class="row gx-1">
               <div class="col-9">
                 <input
                   type="search"
                   placeholder="Type here..."
                   class="search-input"
+
                 />
               </div>
               <div class="col-3">
@@ -75,7 +76,9 @@
               </div>
               <div class="col-6">
                 <div class="temperature-container d-flex justify-content-end">
-                  <i class="fas fa-snowman fa-7x"></i>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" 
+                    id="icon"
+                    alt="">
                   <div>
                     <span id="temperature">7</span>
                     <span id="unit">°C</span>
@@ -84,57 +87,8 @@
               </div>
             </div>
           </div>
-          <div class="weatherforecast row">
-            <div class="col">
-              <div class="weatherforecastpreview">
-                <div class="forecast-date">Thu</div>
-                ifont
-                <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">7℃</span>
-                  <span class="forecast-temperature-min">2℃</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="weatherforecastpreview">
-                <div class="forecast-date">Thu</div>
-                ifont
-                <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">7℃</span>
-                  <span class="forecast-temperature-min">2℃</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="weatherforecastpreview">
-                <div class="forecast-date">Thu</div>
-                ifont
-                <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">7℃</span>
-                  <span class="forecast-temperature-min">2℃</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="weatherforecastpreview">
-                <div class="forecast-date">Thu</div>
-                ifont
-                <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">7℃</span>
-                  <span class="forecast-temperature-min">2℃</span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="weatherforecastpreview">
-                <div class="forecast-date">Thu</div>
-                ifont
-                <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">7℃</span>
-                  <span class="forecast-temperature-min">2℃</span>
-                </div>
-              </div>
-            </div>
+          <div id="forecast">
+             
           </div>
         </div>
       </div>
